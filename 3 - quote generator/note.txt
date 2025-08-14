@@ -1,0 +1,4 @@
+app1.js is where const quoteArray variable is in the function getQuotes()
+app2.js is where const quoteArray initiated without function.
+
+This is just my self challenge trying to generate random quotes whether the const quoteArray is declared inside the function or without it.
