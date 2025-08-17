@@ -1,12 +1,11 @@
-const { BrowserRouter, NavLink, Route, Switch } = ReactRouterDOM;
+const { HashRouter, NavLink, Route, Switch } = ReactRouterDOM;
 
 const Navbar = () => (
     <nav>
         <ul>
             <li>
                 <NavLink
-                    to="/index.html"
-                    exact
+                    exact to="/"
                     activeClassName="active"
                     activeStyle={{ backgroundColor: '#e0e0e0' }}
                 >Home
@@ -14,8 +13,7 @@ const Navbar = () => (
             </li>
             <li>
                 <NavLink 
-                    to="/about.html"
-                    exact
+                    to="/about"
                     activeClassName="active"
                     activeStyle={{ backgroundColor: '#e0e0e0' }}
                 >About
@@ -23,8 +21,7 @@ const Navbar = () => (
             </li>
             <li>
                 <NavLink 
-                    to="/contact.html"
-                    exact
+                    to="/contact"
                     activeClassName="active"
                     activeStyle={{ backgroundColor: '#e0e0e0' }}
                 >Contact
@@ -39,14 +36,14 @@ const About = () => <h2>About Us Page</h2>;
 const Contact = () => <h2>Contact Page</h2>;
 
 const App = () => (
-    <BrowserRouter>
+    <HashRouter>
         <Navbar />
         <Switch>
-            <Route exact path="/index.html" component={Home} />
-            <Route path="/about.html" component={About} />
-            <Route path="/contact.html" component={Contact} />
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
         </Switch>
-    </BrowserRouter>
+    </HashRouter>
 );
 
 // Export Navbar if you want to use it in other files
