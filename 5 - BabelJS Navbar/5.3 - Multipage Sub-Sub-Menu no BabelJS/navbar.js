@@ -19,27 +19,27 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Mobile dropdown handling
-    document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
-        toggle.addEventListener('click', function(e) {
+    document.querySelectorAll('.dropdown-submenu > a').forEach(function(item) {
+        item.addEventListener('click', function(e) {
             // Desktop hover behavior
             if (window.innerWidth < 992) {
                 e.preventDefault();
                 e.stopPropagation();
 
-                const dropdownMenu = this.nextElementSibling;
-                const isShowing = dropdownMenu.classList.contains('show');
-                const parentItem = this.closest('.dropdown, .dropdown-submenu');
+                const submenu = this.nextElementSibling;
+                const isShowing = submenu.classList.contains('show');
 
-                // Close all other dropdowns at the same level
-                if(parentItem) {
-                    parentMenu.querySelectorAll('.dropdown-menu')
-                    .forEach(menu => {
-                        if(menu !== submenu) menu.classList.remove('show');
-                    });
+                // Close all other submenus at the same level
+                const parentMenu = this.closest('.dropdown-menu');
+                if(parentMenu) {
+                    parentMenu.querySelectorAll('.dropdown-submenu > .dropdown-menu')
+                        .forEach(menu => {
+                            if(menu !== submenu) menu.classList.remove('show');
+                        });
                 }
 
                 // Toggle current dropdown
-                dropdownMenu.classList.toggle('show');
+                submenu.classList.toggle('show');
                 this.setAttribute('aria-expanded', !isShowing);
             }
         });
@@ -55,8 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Close navbar collapse
                 const navbarCollapse = document.querySelector('.navbar-collapse');
                 if(navbarCollapse.classList.contains('show')) {
-                    const toggler = document.querySelector('.navbar-toggler');
-                    toggler.click(); // This triggers Bootstrap's native collapse
+                    document.querySelector('.navbar-toggler').click();
                 }
 
                 // Close all dropdown menus
@@ -65,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
 
                 // Reset toggle states
-                document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+                document.querySelectorAll('[aria-expanded="true"]').forEach(toggle => {
                     toggle.setAttribute('aria-expanded', 'false');
                 });
             }
@@ -88,7 +87,7 @@ window.addEventListener('resize', function() {
         document.querySelectorAll('.dropdown-menu').forEach(menu => {
             menu.classList.remove('show');
         }); 
-        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+        document.querySelectorAll('[aria-expanded="true"]').forEach(toggle => {
             toggle.setAttribute('aria-expanded', 'false');
         });
     }

@@ -3,6 +3,20 @@
     display: none;
 }
 
+/* Fix for dropdown arrow styling */
+.dropdown-toggle:after {
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+    float: none;
+    margin-right: 0;
+}
+
 /* Show dropdown on hover (desktop only) */
 @media (min-width: 992px) {
     .nav-item.dropdown:hover > .dropdown-menu {
@@ -17,6 +31,10 @@
         margin-top: 26%;
         margin-left:-0.2%;
         display: none;
+    }
+
+    .dropdown-item {
+        content: "";
     }
 
     /* PENTING buat Submenu bisa tereksekusi */
@@ -61,16 +79,43 @@
         transform: rotate(180deg);
     }
 
+    .dropdown-toggle:after {
+        content: "▾";
+        border: none !important;
+        font-size: 1em;
+        vertical-align: middle;
+        margin-left: 0.5em;
+    }
+
+    /* Remove any extra spacing or borders */
+    .dropdown-item {
+        padding: 0.5rem 1.5rem 0.5rem 1rem;
+        position: relative;
+    }
+
+    /* Clear any inherited styles */
+    .dropdown-submenu > a:after {
+        content: "▾";
+        float: right;
+        margin-right: 10px;
+    }
+
     /* Submenu specific styling */
     .dropdown-submenu > .dropdown-menu {
         /*padding-left: 30px !important;*/
         background-color: rgb(206, 220, 255) !important;
         border-radius: 0 !important;
+        display: none;
+        padding-left: 20px;
+    }
+    .dropdown-submenu > .dropdown-menu.show {
+        display: block;
+        animation: fadeIn 0.2s ease;
     }
 
     @keyframes fadeIn {
-        from { opacity: 0; max-height: 0; }
-        to { opacity: 1; max-height: 500px; }
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 }
 
