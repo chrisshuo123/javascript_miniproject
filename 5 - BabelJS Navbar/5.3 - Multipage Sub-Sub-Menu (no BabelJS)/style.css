@@ -48,8 +48,7 @@
         margin: 0 !important;
         border: none !important;
         box-shadow: none !important;
-        padding-left: 20px !important;
-        background-color: rgba(0,0,0,0.05) !important;
+        background-color: rgba(166, 191, 255) !important;
         display: none !important;
     }
 
@@ -64,7 +63,9 @@
 
     /* Submenu specific styling */
     .dropdown-submenu > .dropdown-menu {
-        padding-left: 30px !important;
+        /*padding-left: 30px !important;*/
+        background-color: rgb(206, 220, 255) !important;
+        border-radius: 0 !important;
     }
 
     @keyframes fadeIn {
