@@ -1,0 +1,92 @@
+/* Main dropdown menu */
+.navbar .dropdown-menu {
+    display: none;
+}
+
+/* Show dropdown on hover (desktop only) */
+@media (min-width: 992px) {
+    .nav-item.dropdown:hover > .dropdown-menu {
+        display: block;
+        position: absolute;
+    }
+
+    /* Submenu positioning */
+    .dropdown-submenu > .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: 26%;
+        margin-left:-0.2%;
+        display: none;
+    }
+
+    /* PENTING buat Submenu bisa tereksekusi */
+    /* Show submenu when hovering parent */
+    .dropdown-submenu:hover > .dropdown-menu {
+        display: block;
+        position: absolute;
+    }
+}
+
+/* Mobile dropdown menu styles */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        transition: all 0.3s ease;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    .navbar-collapse.show {
+        max-height: 100vh;
+        overflow: auto;
+    }
+
+    /* Dropdown menu styling */
+    .dropdown-menu {
+        position: static !important;
+        float: none !important;
+        width: 100% !important;
+        margin: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding-left: 20px !important;
+        background-color: rgba(0,0,0,0.05) !important;
+        display: none !important;
+    }
+
+    .dropdown-menu.show {
+        display: block !important;
+        animation: fadeIn 0.2s ease-in-out;
+    }
+
+    .dropdown-toggle[aria-expanded="true"]:after {
+        transform: rotate(180deg);
+    }
+
+    /* Submenu specific styling */
+    .dropdown-submenu > .dropdown-menu {
+        padding-left: 30px !important;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; max-height: 0; }
+        to { opacity: 1; max-height: 500px; }
+    }
+}
+
+/* Arrow indicator for items with submenus */
+.dropdown-submenu > a:after {
+    display: inline-block;
+    margin-left: 0.255em;
+    content: "▸";
+    float: right;
+}
+
+/* Navbar toggle animation */
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
