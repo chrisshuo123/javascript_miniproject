@@ -10,75 +10,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">MySite</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <!-- Level 1 - Home -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    
-                    <!-- Level 1 with dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown">
-                            Products
-                        </a>
-                        <ul class="dropdown-menu">
-                            <!-- Level 2 items -->
-                            <li><a class="dropdown-item" href="#">Electronics</a></li>
-                            
-                            <!-- Level 2 with submenu -->
-                            <li class="dropdown-submenu">
-                                <a class="dropdown-item" href="#">Clothing</a>
-                                <ul class="dropdown-menu">
-                                    <!-- Level 3 items -->
-                                    <li><a class="dropdown-item" href="#">Men's</a></li>
-                                    <li><a class="dropdown-item" href="#">Women's</a></li>
-                                    <li><a class="dropdown-item" href="#">Kids</a></li>
-                                </ul>
-                            </li>
-                            
-                            <li><a class="dropdown-item" href="#">Furniture</a></li>
-                        </ul>
-                    </li>
-                    
-                    <!-- Another Level 1 with dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">
-                            Services
-                        </a>
-                        <ul class="dropdown-menu">
-                            <!-- Level 2 items -->
-                            <li><a class="dropdown-item" href="#">Consulting</a></li>
-                            
-                            <!-- Level 2 with submenu -->
-                            <li class="dropdown-submenu">
-                                <a class="dropdown-item dropdown-toggle" href="#">Training</a>
-                                <ul class="dropdown-menu">
-                                    <!-- Level 3 items -->
-                                    <li><a class="dropdown-item" href="#">Web Development</a></li>
-                                    <li><a class="dropdown-item" href="#">Data Science</a></li>
-                                    <li><a class="dropdown-item" href="#">Cloud Computing</a></li>
-                                </ul>
-                            </li>
-                            
-                            <li><a class="dropdown-item" href="#">Support</a></li>
-                        </ul>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- Navbar will be rendered here -->
+    <div id="navbar-root"></div>
 
     <!-- Page Content -->
     <div class="container mt-4">
@@ -86,9 +19,14 @@
         <p>This is the main content area.</p>
     </div>
 
+    <!-- React, ReactDOM, and Babel -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS for submenu functionality -->
-    <script src="navbar.js"></script>
+    <script type="text/babel" src="navbarBabel.js"></script>
 </body>
 </html>
