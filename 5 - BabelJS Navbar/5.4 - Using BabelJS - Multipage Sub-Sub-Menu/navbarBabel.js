@@ -21,20 +21,20 @@ const Navbar = () => {
                             </a>
                             <ul class="dropdown-menu">
                                 {/* Level 2 items */}
-                                <li><a class="dropdown-item" href="#">Electronics</a></li>
+                                <li><a class="dropdown-item" href="products/electronics.html">Electronics</a></li>
                                 
                                 {/* Level 2 with submenu */}
                                 <li class="dropdown-submenu">
                                     <a class="dropdown-item" href="#">Clothing</a>
                                     <ul class="dropdown-menu">
                                         {/* Level 3 items */}
-                                        <li><a class="dropdown-item" href="#">Men's</a></li>
-                                        <li><a class="dropdown-item" href="#">Women's</a></li>
-                                        <li><a class="dropdown-item" href="#">Kids</a></li>
+                                        <li><a class="dropdown-item" href="products/clothing/mens.html">Men's</a></li>
+                                        <li><a class="dropdown-item" href="products/clothing/womens.html">Women's</a></li>
+                                        <li><a class="dropdown-item" href="products/clothing/kids.html">Kids</a></li>
                                     </ul>
                                 </li>
                                 
-                                <li><a class="dropdown-item" href="#">Furniture</a></li>
+                                <li><a class="dropdown-item" href="products/furniture.html">Furniture</a></li>
                             </ul>
                         </li>
                         
@@ -45,20 +45,20 @@ const Navbar = () => {
                             </a>
                             <ul class="dropdown-menu">
                                 {/* Level 2 items */}
-                                <li><a class="dropdown-item" href="#">Consulting</a></li>
+                                <li><a class="dropdown-item" href="services/consulting.html">Consulting</a></li>
                                 
                                 {/* Level 2 with submenu */}
                                 <li class="dropdown-submenu">
                                     <a class="dropdown-item dropdown-toggle" href="#">Training</a>
                                     <ul class="dropdown-menu">
                                         {/* Level 3 items */}
-                                        <li><a class="dropdown-item" href="#">Web Development</a></li>
-                                        <li><a class="dropdown-item" href="#">Data Science</a></li>
-                                        <li><a class="dropdown-item" href="#">Cloud Computing</a></li>
+                                        <li><a class="dropdown-item" href="services/training/webdevelopment.html">Web Development</a></li>
+                                        <li><a class="dropdown-item" href="services/training/datascience.html">Data Science</a></li>
+                                        <li><a class="dropdown-item" href="services/training/cloudcomputing.html">Cloud Computing</a></li>
                                     </ul>
                                 </li>
                                 
-                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                <li><a class="dropdown-item" href="services/support.html">Support</a></li>
                             </ul>
                         </li>
                         
