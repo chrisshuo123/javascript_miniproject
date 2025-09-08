@@ -1,0 +1,7 @@
+h1 {
+    color: blue;
+}
+
+#image-container img {
+    border: 5px solid black;
+}
