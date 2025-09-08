@@ -1,4 +1,4 @@
-const randomNumber = Math.floor(Math.random() * 5) + 1;
+const randomNumber = Math.floor(Math.random() * 204) + 1;
 
 const randomPokemon = () => {
     // #1: TAMPILAN PADA HEADER
